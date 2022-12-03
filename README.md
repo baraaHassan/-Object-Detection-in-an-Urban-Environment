@@ -1,7 +1,7 @@
 # Object Detection in an Urban Environment
 
 ## Project overview
-In this project, the task needed is to create a model that can detect cars, and pedsterians for self-driving cars system.
+In this project, the task needed is to create a model that can detect cars, cyclists and pedsterians for self-driving cars system.
 
 ## Set up
 
@@ -135,16 +135,62 @@ python inference_video.py --labelmap_path label_map.pbtxt --model_path experimen
 
 ### Dataset
 #### Dataset analysis
+The code for creating data analysis can be found in Exploratory Data Analysis.ipynb file.
+##### Qualitative analysis
+By visualizing random images, to see the diversity of the dataset and how it looks like. The following are random samples of the dataset.
+![download (17)](https://user-images.githubusercontent.com/49837627/205456662-770590be-c9c6-46bc-bb05-ff150bde32b0.png)
+![download (18)](https://user-images.githubusercontent.com/49837627/205456668-41625460-aa54-428f-bb83-8c0874fe3a20.png)
+##### Quantitive analysis
+
+
 This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
 #### Cross validation
 The data is divided into train,validate and test with ratios 80:10:10.
 
 ### Training
 #### Reference experiment
-This section should detail the results of the reference experiment. It should includes training metrics and a detailed explanation of the algorithm's performances.
+In the reference experiment, the model couldn't converge normally, because different factors, number of iterations wasn't enough, and the batch size was very small. The following settings, are the settings used for the reference experiment.
+
+Model: SSD Resnet 50 640x640 
+No. of epochs: 2500
+batch size = 2
+warmup steps: 200
+Augmentation: - random_crop_image
+              - random_horizontal_flip
+              
+it can be seen from the tensorboard charts the model couldn't converge.
+![Screenshot from 2022-12-03 19-54-31](https://user-images.githubusercontent.com/49837627/205457386-6a118fff-318a-4cc2-b223-451fbb264ad7.png)
+![Screenshot from 2022-12-03 19-55-02](https://user-images.githubusercontent.com/49837627/205457421-0c054a18-d920-4744-93d7-25074a59acdf.png)
+![Screenshot from 2022-12-03 19-56-18](https://user-images.githubusercontent.com/49837627/205457452-6864789d-d4fa-4367-9cbd-6fa137b75c42.png)
+![Screenshot from 2022-12-03 19-56-34](https://user-images.githubusercontent.com/49837627/205457466-68db2e64-7f6b-4413-add2-d9c44bbcf694.png)
+Also the animation created shows that.
+![animation](https://user-images.githubusercontent.com/49837627/205457475-0ed6001b-b831-40ed-84d2-a6bcfe47794e.gif)
 
 #### Improve on the reference
-This section should highlight the different strategies you adopted to improve your model. It should contain relevant figures and details of your findings.
+To improve the reference model, I increased the number of epochs, amount of batches, and added different augmentation options.
+The following settings, are the settings used for the improvement experiment.
+
+Model: SSD Resnet 50 640x640 
+No. of epochs: 25000
+batch size = 4
+warmup steps: 2000
+Augmentation: - random_crop_image
+              - random_horizontal_flip
+              - random_adjust_hue
+              - random_adjust_contrast
+              - random_adjust_saturation
+              - random_adjust_brightness
+              - random_square_crop_by_scale
+              - random_horizontal_flip
+              - random_crop_image
+              
+It can be seen from the tensorboard charts the model was able to converge.
+![Screenshot from 2022-12-03 20-09-10](https://user-images.githubusercontent.com/49837627/205457829-1c2258a2-3cd6-403b-b130-192fc4fbf577.png)
+![Screenshot from 2022-12-03 20-09-23](https://user-images.githubusercontent.com/49837627/205457836-e4db51df-3e76-46b8-86db-685dc21de2c5.png)
+![Screenshot from 2022-12-03 20-09-44](https://user-images.githubusercontent.com/49837627/205457849-1e995668-72b7-497e-813f-66634e99b43c.png)
+![Screenshot from 2022-12-03 20-10-21](https://user-images.githubusercontent.com/49837627/205457853-2f82f333-3f64-434a-8d76-67bbddb27bb6.png)
+
+Also the animation created shows that.
+
+
 =======
-# Object-Detection-in-Urban-Environment
->>>>>>> refs/remotes/origin/main
