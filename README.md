@@ -142,6 +142,7 @@ By visualizing random images, to see the diversity of the dataset and how it loo
 ![download (18)](https://user-images.githubusercontent.com/49837627/205456668-41625460-aa54-428f-bb83-8c0874fe3a20.png)
 ##### Quantitive analysis
 The quantitive analysis shows that the dataset contains more vehicles than pedestrians and cyclists. The following is a chart that shows the distribution for a sample of the dataset.
+
 ![download (19)](https://user-images.githubusercontent.com/49837627/205458524-4e7b1fea-fec9-4bde-9601-970ae86f4bbd.png)
 
 #### Cross validation
