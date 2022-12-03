@@ -141,9 +141,9 @@ By visualizing random images, to see the diversity of the dataset and how it loo
 ![download (17)](https://user-images.githubusercontent.com/49837627/205456662-770590be-c9c6-46bc-bb05-ff150bde32b0.png)
 ![download (18)](https://user-images.githubusercontent.com/49837627/205456668-41625460-aa54-428f-bb83-8c0874fe3a20.png)
 ##### Quantitive analysis
+The quantitive analysis shows that the dataset contains more vehicles than pedestrians and cyclists. The following is a chart that shows the distribution for a sample of the dataset.
+![download (19)](https://user-images.githubusercontent.com/49837627/205458524-4e7b1fea-fec9-4bde-9601-970ae86f4bbd.png)
 
-
-This section should contain a quantitative and qualitative description of the dataset. It should include images, charts and other visualizations.
 #### Cross validation
 The data is divided into train,validate and test with ratios 80:10:10.
 
@@ -162,7 +162,12 @@ it can be seen from the tensorboard charts the model couldn't converge.
 ![Screenshot from 2022-12-03 19-54-31](https://user-images.githubusercontent.com/49837627/205457386-6a118fff-318a-4cc2-b223-451fbb264ad7.png)
 ![Screenshot from 2022-12-03 19-56-18](https://user-images.githubusercontent.com/49837627/205457452-6864789d-d4fa-4367-9cbd-6fa137b75c42.png)
 ![Screenshot from 2022-12-03 19-56-34](https://user-images.githubusercontent.com/49837627/205457466-68db2e64-7f6b-4413-add2-d9c44bbcf694.png)
-Also here the output of the evaluation samples.
+
+The following are samples of the evluation, that shows the model couldn't converge. The model output is on the left side, and the ground truth is on the right side.
+
+![imageData (10)](https://user-images.githubusercontent.com/49837627/205458366-ea9975c9-e193-4912-bee7-2a71a3034a19.png)
+![imageData (12)](https://user-images.githubusercontent.com/49837627/205458373-7d1a6b2a-8dc2-4f72-8a40-b897d7d2f9a8.png)
+![imageData (13)](https://user-images.githubusercontent.com/49837627/205458377-f53f80ba-0e6c-4636-b1ca-948571a72035.png)
 
 
 #### Improve on the reference
@@ -185,9 +190,14 @@ Augmentation: - random_crop_image
               
 It can be seen from the tensorboard charts the model was able to converge.
 ![Screenshot from 2022-12-03 20-09-10](https://user-images.githubusercontent.com/49837627/205457829-1c2258a2-3cd6-403b-b130-192fc4fbf577.png)
+![Screenshot from 2022-12-03 20-21-11](https://user-images.githubusercontent.com/49837627/205458172-a34f2bf6-6b24-4f32-8646-b8273c7da93c.png)
 ![Screenshot from 2022-12-03 20-09-23](https://user-images.githubusercontent.com/49837627/205457836-e4db51df-3e76-46b8-86db-685dc21de2c5.png)
 
-Also the animation created shows that.
+The following are samples of the evluation, that shows the model was able to converge. The model output is on the left side, and the ground truth is on the right side.
+![imageData](https://user-images.githubusercontent.com/49837627/205458434-9caa7963-164c-45f6-ac2d-5c872403b3bb.png)
+![imageData (3)](https://user-images.githubusercontent.com/49837627/205458438-367dab25-a32d-4641-8e38-19885c777eb6.png)
+![imageData (9)](https://user-images.githubusercontent.com/49837627/205458453-ed0a0ad1-ee90-49d0-90d9-2c1adad3269c.png)
 
-
+Note: the animation of the different experiments output can be found in the folder animations.
+Note: there are more experiments done, than the two detailed here in the readme file, you can find those experiments in the experiments folder (each experiment in its own folder).
 =======
