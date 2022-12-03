@@ -46,6 +46,7 @@ def get_train_input(config_path):
   """
   # parse config
   configs = get_configs_from_pipeline_file(config_path)
+  print(configs)
   train_config = configs['train_config']
   train_input_config = configs['train_input_config']
 

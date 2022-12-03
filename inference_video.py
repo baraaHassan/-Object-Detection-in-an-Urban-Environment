@@ -52,7 +52,7 @@ def main(labelmap_path, model_path, tf_record_path, config_path, output_path):
     images = []
     logger.info(f'Inference on {tf_record_path}')
     for idx, batch in enumerate(dataset):
-        if idx % 10 == 0:
+        if idx % 50:
             logger.info(f'Step: {idx}')
         # add new axis and feed into model
         input_tensor = batch['image']
@@ -70,17 +70,17 @@ def main(labelmap_path, model_path, tf_record_path, config_path, output_path):
         # detection_classes should be ints.
         detections['detection_classes'] = detections['detection_classes'].astype(np.int64)
 
-        image_np_with_detections = \
-            viz_utils.visualize_boxes_and_labels_on_image_array(
-                image_np,
-                detections['detection_boxes'],
-                detections['detection_classes'],
-                detections['detection_scores'],
-                category_index,
-                use_normalized_coordinates=True,
-                max_boxes_to_draw=200,
-                min_score_thresh=.30,
-                agnostic_mode=False)
+        image_np_with_detections = image_np.copy()
+        viz_utils.visualize_boxes_and_labels_on_image_array(
+            image_np_with_detections,
+            detections['detection_boxes'],
+            detections['detection_classes'],
+            detections['detection_scores'],
+            category_index,
+            use_normalized_coordinates=True,
+            max_boxes_to_draw=200,
+            min_score_thresh=.30,
+            agnostic_mode=False)
         images.append(image_np_with_detections)
 
     # now we can create the animation
@@ -91,6 +91,8 @@ def main(labelmap_path, model_path, tf_record_path, config_path, output_path):
     im_obj = ax.imshow(images[0])
 
     def animate(idx):
+        # print(len(images))
+        # print(idx)
         image = images[idx]
         im_obj.set_data(image)
 
