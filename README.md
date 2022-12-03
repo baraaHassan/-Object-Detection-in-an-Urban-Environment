@@ -160,11 +160,10 @@ Augmentation: - random_crop_image
               
 it can be seen from the tensorboard charts the model couldn't converge.
 ![Screenshot from 2022-12-03 19-54-31](https://user-images.githubusercontent.com/49837627/205457386-6a118fff-318a-4cc2-b223-451fbb264ad7.png)
-![Screenshot from 2022-12-03 19-55-02](https://user-images.githubusercontent.com/49837627/205457421-0c054a18-d920-4744-93d7-25074a59acdf.png)
 ![Screenshot from 2022-12-03 19-56-18](https://user-images.githubusercontent.com/49837627/205457452-6864789d-d4fa-4367-9cbd-6fa137b75c42.png)
 ![Screenshot from 2022-12-03 19-56-34](https://user-images.githubusercontent.com/49837627/205457466-68db2e64-7f6b-4413-add2-d9c44bbcf694.png)
-Also the animation created shows that.
-![animation](https://user-images.githubusercontent.com/49837627/205457475-0ed6001b-b831-40ed-84d2-a6bcfe47794e.gif)
+Also here the output of the evaluation samples.
+
 
 #### Improve on the reference
 To improve the reference model, I increased the number of epochs, amount of batches, and added different augmentation options.
@@ -187,8 +186,6 @@ Augmentation: - random_crop_image
 It can be seen from the tensorboard charts the model was able to converge.
 ![Screenshot from 2022-12-03 20-09-10](https://user-images.githubusercontent.com/49837627/205457829-1c2258a2-3cd6-403b-b130-192fc4fbf577.png)
 ![Screenshot from 2022-12-03 20-09-23](https://user-images.githubusercontent.com/49837627/205457836-e4db51df-3e76-46b8-86db-685dc21de2c5.png)
-![Screenshot from 2022-12-03 20-09-44](https://user-images.githubusercontent.com/49837627/205457849-1e995668-72b7-497e-813f-66634e99b43c.png)
-![Screenshot from 2022-12-03 20-10-21](https://user-images.githubusercontent.com/49837627/205457853-2f82f333-3f64-434a-8d76-67bbddb27bb6.png)
 
 Also the animation created shows that.
 
