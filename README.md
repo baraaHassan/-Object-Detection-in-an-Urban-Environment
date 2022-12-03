@@ -199,5 +199,7 @@ The following are samples of the evluation, that shows the model was able to con
 ![imageData (9)](https://user-images.githubusercontent.com/49837627/205458453-ed0a0ad1-ee90-49d0-90d9-2c1adad3269c.png)
 
 Note: the animation of the different experiments output can be found in the folder animations.
+
 Note: there are more experiments done, than the two detailed here in the readme file, you can find those experiments in the experiments folder (each experiment in its own folder).
+
 =======
