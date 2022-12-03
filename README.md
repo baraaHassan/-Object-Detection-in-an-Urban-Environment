@@ -151,14 +151,17 @@ The data is divided into train,validate and test with ratios 80:10:10.
 #### Reference experiment
 In the reference experiment, the model couldn't converge normally, because different factors, number of iterations wasn't enough, and the batch size was very small. The following settings, are the settings used for the reference experiment.
 
+```
 Model: SSD Resnet 50 640x640 
 No. of epochs: 2500
 batch size = 2
 warmup steps: 200
 Augmentation: - random_crop_image
               - random_horizontal_flip
-              
-it can be seen from the tensorboard charts the model couldn't converge.
+```
+
+It can be seen from the tensorboard charts the model couldn't converge.
+
 ![Screenshot from 2022-12-03 19-54-31](https://user-images.githubusercontent.com/49837627/205457386-6a118fff-318a-4cc2-b223-451fbb264ad7.png)
 ![Screenshot from 2022-12-03 19-56-18](https://user-images.githubusercontent.com/49837627/205457452-6864789d-d4fa-4367-9cbd-6fa137b75c42.png)
 ![Screenshot from 2022-12-03 19-56-34](https://user-images.githubusercontent.com/49837627/205457466-68db2e64-7f6b-4413-add2-d9c44bbcf694.png)
@@ -174,6 +177,7 @@ The following are samples of the evluation, that shows the model couldn't conver
 To improve the reference model, I increased the number of epochs, amount of batches, and added different augmentation options.
 The following settings, are the settings used for the improvement experiment.
 
+```
 Model: SSD Resnet 50 640x640 
 No. of epochs: 25000
 batch size = 4
@@ -187,13 +191,16 @@ Augmentation: - random_crop_image
               - random_square_crop_by_scale
               - random_horizontal_flip
               - random_crop_image
+```
               
 It can be seen from the tensorboard charts the model was able to converge.
+
 ![Screenshot from 2022-12-03 20-09-10](https://user-images.githubusercontent.com/49837627/205457829-1c2258a2-3cd6-403b-b130-192fc4fbf577.png)
 ![Screenshot from 2022-12-03 20-21-11](https://user-images.githubusercontent.com/49837627/205458172-a34f2bf6-6b24-4f32-8646-b8273c7da93c.png)
 ![Screenshot from 2022-12-03 20-09-23](https://user-images.githubusercontent.com/49837627/205457836-e4db51df-3e76-46b8-86db-685dc21de2c5.png)
 
 The following are samples of the evluation, that shows the model was able to converge. The model output is on the left side, and the ground truth is on the right side.
+
 ![imageData](https://user-images.githubusercontent.com/49837627/205458434-9caa7963-164c-45f6-ac2d-5c872403b3bb.png)
 ![imageData (3)](https://user-images.githubusercontent.com/49837627/205458438-367dab25-a32d-4641-8e38-19885c777eb6.png)
 ![imageData (9)](https://user-images.githubusercontent.com/49837627/205458453-ed0a0ad1-ee90-49d0-90d9-2c1adad3269c.png)
